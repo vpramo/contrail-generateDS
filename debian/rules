@@ -12,6 +12,8 @@
 %:
 	dh  $@
 
+override_dh_clean:
+
 override_dh_install:
 	for i in $$(ls | grep -v debian);do echo "$$i /usr/src/contrail-generateds/" >> debian/contrail-generateds.install;done
 	dh_install
